@@ -2,7 +2,7 @@ from colorama import init
 import sys
 
 """Custom Modules"""
-import input
+from input import input_with_timeout
 import Engine 
 from CentralProcessingUnit import CentralProcessingUnit 
 from Village import Village
@@ -69,10 +69,10 @@ Window.RenderCanvas()
 
 
 # ----------------------------------------GamePlay------------------------------------
-while(not IsEnd):
+while not IsEnd:
     Engine.Canvas.BringCursortoStart()
-    ch = input.input_to(input.Get())
-    if(not(ch is None)):
+    ch = input_with_timeout(0.1)
+    if ch is not None:
         InputStorage.write(ch)
     [IsEnd,Win] = CentralProcessingUnit.UpdatingVillage(ch,Village,TownHall,Huts_list,Walls_list,Cannon_list,King,Barbarian_list)
     Window.UpdateCanvas(King.KingHealthBar(Village),[Village.StartingIndexOnCanvas[0]+Village.VillageRows,Village.StartingIndexOnCanvas[1]])
