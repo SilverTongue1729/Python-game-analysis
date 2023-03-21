@@ -5,11 +5,11 @@ import sys
 import input
 import Engine 
 from CentralProcessingUnit import CentralProcessingUnit 
-from StartingEnding import StartingEnding
 from Village import Village
 import Infrastructure
 import Army
 from datetime import datetime
+from time import sleep
 
 
 # -----------------------------Starting--------------------------------------------------
@@ -18,7 +18,9 @@ today = datetime.today()
 name = f"{today.year}-{today.month}-{today.day}-{today.hour}-{today.minute}-{today.second}"
 path = f"./Replays/ReplayFiles/{name}"
 InputStorage = open(path,'wt')
-StartingEnding.Start()
+print("clash of clans")
+sleep(1)
+Engine.Canvas.clear()
 
 
 # -----------------------------Variable Initialization----------------------------------
@@ -79,4 +81,9 @@ while(not IsEnd):
 
 # ----------------------------------------Ending--------------------------------------- 
 Window.BringCursortoEnd()
-StartingEnding.Ending(Win)
+Engine.Canvas.clear()
+if (Win):
+    print("You have what it takes to be Clash of Clan master. VICTORY!")
+else:
+    print("You need to train harder. LOST!")
+print("Thankyou for Playing")
