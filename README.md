@@ -2,7 +2,7 @@
 
 ## DASS Assignment 2
 
-Analysis of a python game, with a uml diagram, list of bugs and code smells
+Analysis of a python game (Clash of Clans), with a uml diagram, list of bugs and code smells
 
 ## Code Smells
 
